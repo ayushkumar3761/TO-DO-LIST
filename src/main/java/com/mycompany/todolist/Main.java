@@ -119,6 +119,39 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_resActionPerformed
 
+    private void res1ActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        // TODO add your handling code here:
+        int index=list.getSelectedIndex();
+        if(index!=-1){
+            String oldValue=lm.getElementAt(index);
+            
+            String newValue=JOptionPane.showInputDialog(this,"Edit box:",oldValue);
+            
+            lm.setElementAt(newValue,index);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Select one option to edit");
+        }
+    }                                    
+
+    private void res2ActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        // TODO add your handling code here:
+        int index=list.getSelectedIndex();
+        if(index!=-1){
+            String value=lm.getElementAt(index);
+            if(!value.startsWith("✅")){
+                lm.setElementAt("✅"+ value,index);
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Task already marked as complete!");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"select to mark as complete");
+        }
+        
+    }                    
+
     /**
      * @param args the command line arguments
      */
